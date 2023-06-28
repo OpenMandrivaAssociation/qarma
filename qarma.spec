@@ -1,7 +1,7 @@
 Name:		qarma
 Summary:	Call Qt dialog boxes from the command line
-Version:	0.20180619
-Release:	2
+Version:	0.20221217
+Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
 URL:		https://github.com/luebking/qarma
