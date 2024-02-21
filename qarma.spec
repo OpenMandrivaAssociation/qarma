@@ -1,3 +1,4 @@
+%define debug_package %{nil}
 Name:		qarma
 Summary:	Call Qt dialog boxes from the command line
 Version:	0.20221217
