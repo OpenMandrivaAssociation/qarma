@@ -1,0 +1,12 @@
+diff -up qarma-master/Qarma.cpp.omv~ qarma-master/Qarma.cpp
+--- qarma-master/Qarma.cpp.omv~	2024-06-01 01:17:45.541500679 +0200
++++ qarma-master/Qarma.cpp	2024-06-01 01:18:07.301711112 +0200
+@@ -1957,7 +1957,7 @@ void Qarma::printHelp(const QString &cat
+ int main (int argc, char **argv)
+ {
+     if (argc > 0)
+-        QCoreApplication::setApplicationName(argv[0]); // autoset my ass…
++        QCoreApplication::setApplicationName(basename(argv[0])); // autoset my ass…
+     if (argc < 2) {
+         Qarma::printHelp();
+         return 1;
