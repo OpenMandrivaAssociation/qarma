@@ -1,0 +1,12 @@
+diff -up qarma-master/Qarma.cpp.2~ qarma-master/Qarma.cpp
+--- qarma-master/Qarma.cpp.2~	2024-07-25 18:11:08.172094509 +0200
++++ qarma-master/Qarma.cpp	2024-07-25 18:25:56.302755329 +0200
+@@ -1239,7 +1239,7 @@ char Qarma::showProgress(const QStringLi
+     }
+ 
+     listenToStdIn();
+-    if (dlg->maximum() == 0) { // pulsate, quit as stdin closes
++    if (dlg->property("qarma_autoclose").toBool() || dlg->maximum() == 0) { // pulsate, quit as stdin closes
+         connect (gs_stdin, SIGNAL(aboutToClose()), this, SLOT(finishProgress()));
+     }
+ 

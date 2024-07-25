@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:		qarma
 Summary:	Call Qt dialog boxes from the command line
-Version:	0.20230601
+Version:	0.20240419
 Release:	1
 License:	LGPLv2+
 Group:		Development/KDE and Qt
@@ -23,6 +23,7 @@ Obsoletes:	zenity < 3.32.0-1
 
 %patchlist
 dont-error-out-when-called-by-absolute-path.patch
+autoclose-on-closed-stdin.patch
 
 %description
 Qarma allows you to display dialog boxes from the commandline and shell
