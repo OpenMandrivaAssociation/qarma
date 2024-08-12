@@ -2,7 +2,7 @@
 Name:		qarma
 Summary:	Call Qt dialog boxes from the command line
 Version:	0.20240419
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Development/KDE and Qt
 URL:		https://github.com/luebking/qarma
@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	pkgconfig(Qt6Widgets)
 BuildRequires:	pkgconfig(Qt6DBus)
 
-Requires(post,preun):	update-alternatives
+Recommends:	zenity-wrapper
 
 # Not exactly, but qarma 20180619 should be pretty much feature
 # compatible with zenity 3.32.0-1
@@ -40,12 +40,6 @@ It is a drop-in replacement for the GTK based zenity tool.
 
 %install
 %make_install INSTALL_ROOT=%{buildroot}
-
-%post
-%{_sbindir}/update-alternatives --install %{_bindir}/zenity zenity %{_bindir}/qarma 50
-
-%preun
-%{_sbindir}/update-alternatives --remove zenity %{_bindir}/qarma
 
 %files
 %{_bindir}/*
